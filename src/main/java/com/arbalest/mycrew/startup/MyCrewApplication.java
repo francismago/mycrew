@@ -1,4 +1,4 @@
-package com.arbalest.mycrew;
+package com.arbalest.mycrew.startup;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

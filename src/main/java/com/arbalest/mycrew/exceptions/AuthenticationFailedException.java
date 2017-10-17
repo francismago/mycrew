@@ -1,4 +1,4 @@
-package com.arbalest.mycrew;
+package com.arbalest.mycrew.exceptions;
 
 /**
  * Created by francis on 10/16/17.
