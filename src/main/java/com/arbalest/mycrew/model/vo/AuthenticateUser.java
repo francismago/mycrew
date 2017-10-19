@@ -26,12 +26,28 @@ public class AuthenticateUser {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getValidateCode() {
         return validateCode;
+    }
+
+    public void setValidateCode(String validateCode) {
+        this.validateCode = validateCode;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 
     public UserType getUserType() {
@@ -61,5 +77,15 @@ public class AuthenticateUser {
             return new AuthenticateUser(username,password, validateCode,userType);
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "AuthenticateUser{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", validateCode='" + validateCode + '\'' +
+                ", userType=" + userType +
+                '}';
     }
 }

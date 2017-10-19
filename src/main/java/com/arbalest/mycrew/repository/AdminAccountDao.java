@@ -7,11 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by francis on 10/17/17.
  */
-@Repository
+@Repository("adminAccountDao")
 public interface AdminAccountDao  extends JpaRepository<AdminAccount,String>{
-
-
-
-
 
 }
