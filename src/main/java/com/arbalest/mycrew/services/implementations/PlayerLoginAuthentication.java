@@ -1,6 +1,6 @@
 package com.arbalest.mycrew.services.implementations;
 
-import com.arbalest.mycrew.model.vo.AuthenticateUser;
+import com.arbalest.mycrew.model.vo.RequestAuthenticateUser;
 import com.arbalest.mycrew.services.interfaces.LoginAuthenticationService;
 
 /**
@@ -9,7 +9,7 @@ import com.arbalest.mycrew.services.interfaces.LoginAuthenticationService;
 public class PlayerLoginAuthentication implements LoginAuthenticationService {
 
     @Override
-    public void authenticate(AuthenticateUser authenticateUser) {
+    public void authenticate(RequestAuthenticateUser authenticateUser) {
 
     }
 }

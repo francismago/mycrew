@@ -38,7 +38,7 @@
 //    }
 //
 //    @Column(name = "createTime")
-//    public Timestamp getCreateTime() {
+//    public Timestamp getBirthday() {
 //        return createTime;
 //    }
 //

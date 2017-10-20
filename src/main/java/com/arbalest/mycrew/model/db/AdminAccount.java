@@ -87,4 +87,12 @@ public class AdminAccount {
     }
 
 
+    @Override
+    public String toString() {
+        return "AdminAccount{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }
