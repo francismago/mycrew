@@ -1,6 +1,6 @@
 package com.arbalest.mycrew.services.facades;
 
-import com.arbalest.mycrew.model.enums.UserType;
+import com.arbalest.mycrew.enums.UserType;
 import com.arbalest.mycrew.model.vo.RequestAuthenticateUser;
 import com.arbalest.mycrew.services.factories.LoginAuthenticationFactory;
 import org.springframework.beans.factory.annotation.Autowired;

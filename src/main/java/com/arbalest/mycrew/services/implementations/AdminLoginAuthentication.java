@@ -2,7 +2,7 @@ package com.arbalest.mycrew.services.implementations;
 
 import com.arbalest.mycrew.model.db.AdminAccount;
 import com.arbalest.mycrew.model.vo.RequestAuthenticateUser;
-import com.arbalest.mycrew.repository.AdminAccountDao;
+import com.arbalest.mycrew.model.repositories.AdminAccountRepository;
 import com.arbalest.mycrew.services.interfaces.LoginAuthenticationService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class AdminLoginAuthentication implements LoginAuthenticationService {
 
     @Autowired
-    private AdminAccountDao adminAccountDao;
+    private AdminAccountRepository adminAccountRepository;
 
     @Override
     public void authenticate(RequestAuthenticateUser authenticateUser) {
@@ -24,7 +24,7 @@ public class AdminLoginAuthentication implements LoginAuthenticationService {
             return;
         }
 
-        AdminAccount adminAccount = adminAccountDao.findOne(authenticateUser.getUsername());
+        AdminAccount adminAccount = adminAccountRepository.findOne(authenticateUser.getUsername());
         if (adminAccount == null){
             System.out.println("user does not exist");
         }else if(!StringUtils.equals(adminAccount.getUsername(),authenticateUser.getUsername()) ||

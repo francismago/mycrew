@@ -1,6 +1,6 @@
 package com.arbalest.mycrew.model.vo;
 
-import com.arbalest.mycrew.model.enums.UserType;
+import com.arbalest.mycrew.enums.UserType;
 
 /**
  * Created by francis on 10/16/17.

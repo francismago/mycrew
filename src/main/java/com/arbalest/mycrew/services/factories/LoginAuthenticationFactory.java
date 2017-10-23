@@ -1,6 +1,6 @@
 package com.arbalest.mycrew.services.factories;
 
-import com.arbalest.mycrew.model.enums.UserType;
+import com.arbalest.mycrew.enums.UserType;
 import com.arbalest.mycrew.services.interfaces.LoginAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

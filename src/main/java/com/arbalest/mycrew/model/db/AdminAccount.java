@@ -51,42 +51,6 @@ public class AdminAccount {
         this.token = token;
     }
 
-
-    public static class Builder{
-
-        private String username;
-        private String password;
-        private String token;
-
-        public Builder adminAccount(AdminAccount adminAccount){
-            username = adminAccount.username;
-            password = adminAccount.password;
-            token    = adminAccount.token;
-            return this;
-        }
-
-        public Builder username(String username){
-            this.username = username;
-            return this;
-        }
-
-        public Builder password(String password){
-            this.password = password;
-            return this;
-        }
-
-        public Builder token(String token) {
-            this.token = token;
-            return this;
-        }
-
-        public AdminAccount build(){
-            return new AdminAccount(username,password,token);
-        }
-
-    }
-
-
     @Override
     public String toString() {
         return "AdminAccount{" +

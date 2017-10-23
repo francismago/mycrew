@@ -86,56 +86,15 @@ public class Player {
         this.birthday = birthday;
     }
 
-    public static class Builder{
-        private Integer ballerId;
-        private String firstName;
-        private String lastName;
-        private String country;
-        private String city;
-        private Timestamp birthday;
-
-        public Builder() {
-        }
-
-        public Builder(Player player){
-            this.ballerId = player.ballerId;
-            this.firstName = player.firstName;
-            this.lastName = player.lastName;
-            this.country = player.country;
-            this.city = player.city;
-            this.birthday = player.birthday;
-
-        }
-
-        public Builder ballerId(Integer ballerId){
-            this.ballerId = ballerId;
-            return this;
-        }
-
-        public Builder firstName(String firstName){
-            this.firstName = firstName;
-            return this;
-        }
-
-        public Builder lastName(String lastName){
-            this.lastName = lastName;
-            return this;
-        }
-
-        public Builder country(String country){
-            this.country = country;
-            return this;
-        }
-        public Builder city(String city){
-            this.city = city;
-            return this;
-        }
-
-        public Builder birthday(){
-            this.birthday = birthday;
-            return this;
-        }
-
+    @Override
+    public String toString() {
+        return "Player{" +
+                "ballerId=" + ballerId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
-
 }

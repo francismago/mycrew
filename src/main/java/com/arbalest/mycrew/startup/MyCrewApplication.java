@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan("com.arbalest.mycrew")
-@EnableJpaRepositories(basePackages = "com.arbalest.mycrew.repository" )
+@EnableJpaRepositories(basePackages = "com.arbalest.mycrew.model.repositories")
 @EntityScan(basePackages = "com.arbalest.mycrew.model.db")
 public class MyCrewApplication  {
 

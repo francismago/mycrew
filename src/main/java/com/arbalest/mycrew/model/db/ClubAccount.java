@@ -7,71 +7,70 @@ import javax.persistence.Table;
 import java.sql.Timestamp;
 
 /**
- * Created by francis on 10/20/17.
+ * Created by francis on 10/23/17.
  */
 @Entity
-@Table(name = "player_account")
-public class PlayerAccount {
+@Table(name = "club_account")
+public class ClubAccount {
 
-    private Integer ballerId;
+    private Integer clubId;
     private String username;
     private String password;
-    private Timestamp createTime;
     private String accountType;
+    private Timestamp createTime;
     private String token;
     private String remarks;
 
-    public PlayerAccount() {
+    public ClubAccount() {
     }
 
-    public PlayerAccount(Integer ballerId, String username, String password, Timestamp createTime, String accountType, String token, String remarks) {
-        this.ballerId = ballerId;
+    public ClubAccount(Integer clubId, String username, String password, String accountType, Timestamp createTime, String token, String remarks) {
+        this.clubId = clubId;
         this.username = username;
         this.password = password;
-        this.createTime = createTime;
         this.accountType = accountType;
+        this.createTime = createTime;
         this.token = token;
         this.remarks = remarks;
     }
 
-
-    @Id @Column(name ="ballerId")
-    public Integer getBallerId() {
-        return ballerId;
+    @Id @Column(name = "clubId")
+    public Integer getClubId() {
+        return clubId;
     }
 
-    @Column(name ="username")
+    @Column(name = "username")
     public String getUsername() {
         return username;
     }
 
-    @Column(name ="password")
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
 
-    @Column(name ="createTime")
-    public Timestamp getCreateTime() {
-        return createTime;
-    }
-
-    @Column(name ="accountType")
+    @Column(name = "accountType")
     public String getAccountType() {
         return accountType;
     }
 
-    @Column(name ="token")
+    @Column(name = "createTime")
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    @Column(name = "token")
     public String getToken() {
         return token;
     }
 
-    @Column(name="remarks")
+    @Column(name = "remarks")
     public String getRemarks() {
         return remarks;
     }
 
-    public void setBallerId(Integer ballerId) {
-        this.ballerId = ballerId;
+    public void setClubId(Integer clubId) {
+        this.clubId = clubId;
     }
 
     public void setUsername(String username) {
@@ -82,12 +81,12 @@ public class PlayerAccount {
         this.password = password;
     }
 
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
-    }
-
     public void setAccountType(String accountType) {
         this.accountType = accountType;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
     }
 
     public void setToken(String token) {
@@ -98,17 +97,14 @@ public class PlayerAccount {
         this.remarks = remarks;
     }
 
-
-
-
     @Override
     public String toString() {
-        return "PlayerAccount{" +
-                "ballerId=" + ballerId +
+        return "ClubAccount{" +
+                "clubId=" + clubId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", createTime=" + createTime +
                 ", accountType='" + accountType + '\'' +
+                ", createTime=" + createTime +
                 ", token='" + token + '\'' +
                 ", remarks='" + remarks + '\'' +
                 '}';
