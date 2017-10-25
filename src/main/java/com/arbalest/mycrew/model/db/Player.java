@@ -1,9 +1,6 @@
 package com.arbalest.mycrew.model.db;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
@@ -12,6 +9,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "player")
 public class Player {
+
     private Integer ballerId;
     private String firstName;
     private String lastName;
@@ -19,18 +17,29 @@ public class Player {
     private String city;
     private Timestamp birthday;
 
+    private PlayerAccount playerAccount;
+
+    @OneToOne(mappedBy = "player")
+    public PlayerAccount getPlayerAccount() {
+        return playerAccount;
+    }
+
+    public void setPlayerAccount(PlayerAccount playerAccount) {
+        this.playerAccount = playerAccount;
+    }
+
     public Player() {
     }
 
-    public Player(Integer ballerId, String firstName, String lastName, String country, String city, Timestamp birthday) {
+    public Player(Integer ballerId, String firstName, String lastName, String country, String city, Timestamp birthday, PlayerAccount playerAccount) {
         this.ballerId = ballerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
         this.city = city;
         this.birthday = birthday;
+        this.playerAccount = playerAccount;
     }
-
 
     @Id @Column(name = "ballerId")
     public Integer getBallerId() {

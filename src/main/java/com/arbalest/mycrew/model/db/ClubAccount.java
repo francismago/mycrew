@@ -1,9 +1,6 @@
 package com.arbalest.mycrew.model.db;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
@@ -21,10 +18,22 @@ public class ClubAccount {
     private String token;
     private String remarks;
 
+    private Club club;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "clubId")
+    public Club getClub() {
+        return club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
+    }
+
     public ClubAccount() {
     }
 
-    public ClubAccount(Integer clubId, String username, String password, String accountType, Timestamp createTime, String token, String remarks) {
+    public ClubAccount(Integer clubId, String username, String password, String accountType, Timestamp createTime, String token, String remarks, Club club) {
         this.clubId = clubId;
         this.username = username;
         this.password = password;
@@ -32,7 +41,9 @@ public class ClubAccount {
         this.createTime = createTime;
         this.token = token;
         this.remarks = remarks;
+        this.club = club;
     }
+
 
     @Id @Column(name = "clubId")
     public Integer getClubId() {
@@ -69,6 +80,7 @@ public class ClubAccount {
         return remarks;
     }
 
+
     public void setClubId(Integer clubId) {
         this.clubId = clubId;
     }
@@ -96,6 +108,7 @@ public class ClubAccount {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
+
 
     @Override
     public String toString() {
