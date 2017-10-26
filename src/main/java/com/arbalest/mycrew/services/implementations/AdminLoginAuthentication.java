@@ -1,7 +1,7 @@
 package com.arbalest.mycrew.services.implementations;
 
 import com.arbalest.mycrew.model.db.AdminAccount;
-import com.arbalest.mycrew.model.vo.RequestAuthenticateUser;
+import com.arbalest.mycrew.model.vo.AuthenticateUser;
 import com.arbalest.mycrew.model.repositories.AdminAccountRepository;
 import com.arbalest.mycrew.services.interfaces.LoginAuthenticationService;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +18,7 @@ public class AdminLoginAuthentication implements LoginAuthenticationService {
     private AdminAccountRepository adminAccountRepository;
 
     @Override
-    public void authenticate(RequestAuthenticateUser authenticateUser) {
+    public void authenticate(AuthenticateUser authenticateUser) {
         if (authenticateUser == null | authenticateUser.getUsername() == null || authenticateUser == null){
             System.out.println("no data");
             return;

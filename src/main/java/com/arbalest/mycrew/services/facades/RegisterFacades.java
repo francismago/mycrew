@@ -1,7 +1,7 @@
 package com.arbalest.mycrew.services.facades;
 
-import com.arbalest.mycrew.model.vo.RequestNewPlayer;
-import com.arbalest.mycrew.services.interfaces.SaveDataService;
+import com.arbalest.mycrew.model.vo.NewPlayer;
+import com.arbalest.mycrew.dao.interfaces.SaveDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class RegisterFacades {
 
-    @Autowired
-    private SaveDataService<RequestNewPlayer> playerService;
+//    @Autowired
+//    private SaveDataRepository<NewPlayer> playerService;
 
-    public void registerNewPlayer(RequestNewPlayer requestNewPlayer){
-        playerService.save(requestNewPlayer);
+    public void registerNewPlayer(NewPlayer requestNewPlayer){
+//        playerService.save(requestNewPlayer);
 
     }
 }

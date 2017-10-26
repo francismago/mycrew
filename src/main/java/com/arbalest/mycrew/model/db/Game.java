@@ -24,13 +24,14 @@ public class Game {
     private Integer loserTeamId;
     private Integer winnerScore;
     private Integer loserScore;
+    private Integer numberOfOT;
     private String remarks;
 
 
     public Game() {
     }
 
-    public Game(Integer gameId, Integer seasonId, Integer clubId, String location, Timestamp startDate, Timestamp endDate, String gameType, Integer winnerTeamId, Integer loserTeamId, Integer winnerScore, Integer loserScore, String remarks) {
+    public Game(Integer gameId, Integer seasonId, Integer clubId, String location, Timestamp startDate, Timestamp endDate, String gameType, Integer winnerTeamId, Integer loserTeamId, Integer winnerScore, Integer loserScore, Integer numberOfOT, String remarks) {
         this.gameId = gameId;
         this.seasonId = seasonId;
         this.clubId = clubId;
@@ -42,6 +43,7 @@ public class Game {
         this.loserTeamId = loserTeamId;
         this.winnerScore = winnerScore;
         this.loserScore = loserScore;
+        this.numberOfOT = numberOfOT;
         this.remarks = remarks;
     }
 
@@ -100,6 +102,11 @@ public class Game {
         return loserScore;
     }
 
+    @Column(name = "numberOfOT")
+    public Integer getNumberOfOT() {
+        return numberOfOT;
+    }
+
     @Column(name = "remarks")
     public String getRemarks() {
         return remarks;
@@ -149,6 +156,10 @@ public class Game {
         this.loserScore = loserScore;
     }
 
+    public void setNumberOfOT(Integer numberOfOT) {
+        this.numberOfOT = numberOfOT;
+    }
+
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
@@ -167,6 +178,8 @@ public class Game {
                 ", loserTeamId=" + loserTeamId +
                 ", winnerScore=" + winnerScore +
                 ", loserScore=" + loserScore +
+                ", numberOfOT=" + numberOfOT +
+                ", remarks='" + remarks + '\'' +
                 '}';
     }
 }

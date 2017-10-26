@@ -5,7 +5,7 @@ import com.arbalest.mycrew.enums.UserType;
 /**
  * Created by francis on 10/16/17.
  */
-public class RequestAuthenticateUser {
+public class AuthenticateUser {
 
     private String username;
     private String password;

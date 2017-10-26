@@ -1,16 +1,14 @@
 package com.arbalest.mycrew.model.db;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by francis on 10/23/17.
  */
 @Entity
 @Table(name = "sequence")
-public class Sequence {
+public class Sequence implements Serializable {
     private Integer sequenceId;
     private String type;
     private String value;
@@ -24,7 +22,9 @@ public class Sequence {
         this.value = value;
     }
 
-    @Id @Column(name = "sequenceId")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sequenceId")
     public Integer getSequenceId() {
         return sequenceId;
     }

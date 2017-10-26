@@ -3,7 +3,7 @@ package com.arbalest.mycrew.model.vo;
 /**
  * Created by francis on 10/20/17.
  */
-public class RequestNewPlayer {
+public class NewPlayer {
 
     private String username;
     private String password;
