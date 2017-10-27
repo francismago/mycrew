@@ -23,15 +23,15 @@ public class RegistrationController {
     @Autowired
     private UserRegistrationFactory userRegistrationFactory;
 
-    @RequestMapping("/player")
-    public String playerRegisrationPage(){
-        return "/html/registration/player_registration";
-    }
-
-    @RequestMapping("/club")
-    public String clubRegistrationPage(){
-        return "/html/registration/club_registration";
-    }
+//    @RequestMapping("/player")
+//    public String playerRegisrationPage(){
+//        return "/html/registration/player_registration";
+//    }
+//
+//    @RequestMapping("/club")
+//    public String clubRegistrationPage(){
+//        return "/html/registration/club_registration";
+//    }
 
     @PostMapping("/player/submit")
     public String registerPlayer(NewPlayer requestNewPlayer) {
@@ -43,7 +43,7 @@ public class RegistrationController {
     @PostMapping("/club/submit")
     public String registerClub(ClubVo clubVo){
         System.out.println("registerClub:"+clubVo);
-        userRegistrationFactory.getRegistrationBy(UserType.ADMIN).register(clubVo);
+        userRegistrationFactory.getRegistrationBy(UserType.CLUB).register(clubVo);
         return "/html/registration/success_registration";
     }
 }

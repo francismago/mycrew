@@ -17,7 +17,7 @@ public class UserRegistrationFactory {
 
     public UserRegistrationService getRegistrationBy(UserType userType){
         switch (userType){
-            case ADMIN: return clubUserRegistration;
+            case CLUB: return clubUserRegistration;
         }
 
         return null;

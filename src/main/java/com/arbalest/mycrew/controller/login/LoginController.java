@@ -16,12 +16,17 @@ public class LoginController {
     @Autowired
     private LoginFacades loginFaces;
 
+    @RequestMapping("/login")
+    public String none(){
+        return "/html/login";
+    }
+
     @RequestMapping("/admin")
     public String adminLogin(){
         return "/html/login";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/submit")
     public String login(AuthenticateUser authenticateUse){
         System.out.println(authenticateUse);
         loginFaces.goLoginAdmin(authenticateUse);

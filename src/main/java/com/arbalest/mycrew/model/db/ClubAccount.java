@@ -1,6 +1,11 @@
 package com.arbalest.mycrew.model.db;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 
 /**
@@ -20,7 +25,8 @@ public class ClubAccount {
 
     private Club club;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
+    @Cascade(CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "clubId")
     public Club getClub() {
         return club;

@@ -10,6 +10,7 @@ import com.arbalest.mycrew.model.db.ClubAccount;
 import com.arbalest.mycrew.model.db.RegisteredUsername;
 import com.arbalest.mycrew.model.db.RegisteredUsernameId;
 import com.arbalest.mycrew.model.repositories.ClubAccountRepository;
+import com.arbalest.mycrew.model.repositories.ClubRepository;
 import com.arbalest.mycrew.model.repositories.RegisteredUsernameReposity;
 import com.arbalest.mycrew.model.vo.ClubVo;
 import com.arbalest.mycrew.util.DateUtil;
@@ -27,6 +28,9 @@ public class ClubRegistrationDao implements SaveDataRepository<ClubVo> {
 
     @Autowired
     private ClubAccountRepository clubAccountRepository;
+
+    @Autowired
+    private ClubRepository clubRepository;
 
     @Autowired
     private RegisteredUsernameReposity registeredUsernameReposity;
@@ -47,17 +51,16 @@ public class ClubRegistrationDao implements SaveDataRepository<ClubVo> {
         clubAccount.setUsername(data.getUsername());
         clubAccount.setPassword(data.getPassword());
         clubAccount.setCreateTime(now);
-
+        clubAccountRepository.save(clubAccount);
 
 
         Club club = new Club();
         club.setClubId(clubId);
         club.setClubAbbr(data.getClubAbbr());
         club.setCreateTime(now);
+        clubRepository.save(club);
 
-//        clubAccount.setClub(club);
 
-        clubAccountRepository.save(clubAccount);
 
 
         RegisteredUsernameId id = new RegisteredUsernameId(data.getUsername(), UserType.CLUB.name());
