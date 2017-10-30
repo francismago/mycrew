@@ -3,6 +3,7 @@ package com.arbalest.mycrew.controller.common;
 import com.arbalest.mycrew.enums.UserType;
 import com.arbalest.mycrew.model.vo.ClubVo;
 import com.arbalest.mycrew.model.vo.NewPlayer;
+import com.arbalest.mycrew.model.vo.PlayerVo;
 import com.arbalest.mycrew.services.facades.RegisterFacades;
 import com.arbalest.mycrew.services.factories.UserRegistrationFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,20 +24,20 @@ public class RegistrationController {
     @Autowired
     private UserRegistrationFactory userRegistrationFactory;
 
-//    @RequestMapping("/player")
-//    public String playerRegisrationPage(){
-//        return "/html/registration/player_registration";
-//    }
-//
-//    @RequestMapping("/club")
-//    public String clubRegistrationPage(){
-//        return "/html/registration/club_registration";
-//    }
+    @RequestMapping("/player")
+    public String playerRegisrationPage(){
+        return "/html/registration/player_registration";
+    }
+
+    @RequestMapping("/club")
+    public String clubRegistrationPage(){
+        return "/html/registration/club_registration";
+    }
 
     @PostMapping("/player/submit")
-    public String registerPlayer(NewPlayer requestNewPlayer) {
-        System.out.println("createPlayer:"+requestNewPlayer);
-        registerFacades.registerNewPlayer(requestNewPlayer);
+    public String registerPlayer(PlayerVo playerVo) {
+        System.out.println("createPlayer:"+playerVo);
+        userRegistrationFactory.getRegistrationBy(UserType.PLAYER).register(playerVo);
         return "/html/registration/success_registration";
     }
 

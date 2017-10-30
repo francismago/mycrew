@@ -1,6 +1,11 @@
 package com.arbalest.mycrew.model.db;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 
 /**
@@ -20,6 +25,7 @@ public class Player {
     private PlayerAccount playerAccount;
 
     @OneToOne(mappedBy = "player")
+    @Cascade(CascadeType.SAVE_UPDATE)
     public PlayerAccount getPlayerAccount() {
         return playerAccount;
     }

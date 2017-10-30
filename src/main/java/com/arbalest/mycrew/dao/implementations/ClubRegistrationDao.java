@@ -43,6 +43,8 @@ public class ClubRegistrationDao implements SaveDataRepository<ClubVo> {
         if (DataModelCommand.CLUB_SAVE_NEW_ACCOUNT != dataModelCommand)
             return;
 
+
+        System.out.println("ClubRegistrationDao:save="+data);
         Timestamp now = new Timestamp(System.currentTimeMillis());
         Integer clubId = generateIdDao.generate(DataModelCommand.CLUB_GENERATE_ID, DateUtil.getYear());
         ClubAccount clubAccount =  new ClubAccount();
@@ -59,8 +61,6 @@ public class ClubRegistrationDao implements SaveDataRepository<ClubVo> {
         club.setClubAbbr(data.getClubAbbr());
         club.setCreateTime(now);
         clubRepository.save(club);
-
-
 
 
         RegisteredUsernameId id = new RegisteredUsernameId(data.getUsername(), UserType.CLUB.name());

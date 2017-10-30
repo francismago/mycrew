@@ -14,10 +14,14 @@ public class UserRegistrationFactory {
     @Autowired
     UserRegistrationService clubUserRegistration;
 
+    @Autowired
+    UserRegistrationService playerUserRegistration;
+
 
     public UserRegistrationService getRegistrationBy(UserType userType){
         switch (userType){
-            case CLUB: return clubUserRegistration;
+            case CLUB:  return clubUserRegistration;
+            case PLAYER:return playerUserRegistration;
         }
 
         return null;
